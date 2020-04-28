@@ -56,7 +56,8 @@ var process_to_xml = function(node_data,options){
         break;
 
       case 'object':
-        if(node_descriptor == 1 && node_data.name){
+        // check if node_data is there too, otherwise arrays with null values would break it
+        if(node_descriptor == 1 && node_data && node_data.name){
           var content = []
           , attributes = []
           ;
